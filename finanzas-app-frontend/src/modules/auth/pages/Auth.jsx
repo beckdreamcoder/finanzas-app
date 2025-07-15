@@ -1,15 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/Auth.css';
 
-import './auth.css'; // Asegúrate de importar estilos
-
-const Auth: React.FC = () => {
+const Auth = () => {
   const [showRegister, setShowRegister] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showRegPassword, setShowRegPassword] = useState(false);
-  const successRef = useRef<HTMLDivElement>(null);
+  const successRef = useRef(null);
   const navigate = useNavigate();
-
 
   useEffect(() => {
     const inputs = document.querySelectorAll('input');
@@ -23,26 +21,22 @@ const Auth: React.FC = () => {
     });
   }, []);
 
-  const handleLogin = (e: React.FormEvent) => {
-  e.preventDefault();
-  const email = (document.getElementById('email') as HTMLInputElement).value;
-  successRef.current!.style.display = 'block';
-
-  setTimeout(() => {
-    // Redirige al dashboard
-    navigate('/dashboard');
-  }, 1500);
-};
-
-
-  const handleRegister = (e: React.FormEvent) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    const name = (document.getElementById('fullName') as HTMLInputElement).value;
+    //const email = document.getElementById('email').value; *Todavía no se eliminó, pero se puede usar si es necesario
+    // Puedes usar `email` si lo necesitas más adelante
+    successRef.current.style.display = 'block';
+    setTimeout(() => navigate('/bienvenido'), 1500);
+  };
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const name = document.getElementById('fullName').value;
     alert(`¡Cuenta creada exitosamente para ${name}!`);
     setShowRegister(false);
   };
 
-  const handleRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleRipple = (e) => {
     const button = e.currentTarget;
     const ripple = document.createElement('span');
     const rect = button.getBoundingClientRect();
@@ -59,7 +53,6 @@ const Auth: React.FC = () => {
 
   return (
     <div className="auth-container">
-      {/* Login Card */}
       {!showRegister && (
         <div className="auth-card">
           <div className="logo">$</div>
@@ -96,9 +89,7 @@ const Auth: React.FC = () => {
             <button className="btn btn-primary" onClick={handleRipple}>Ingresar</button>
           </form>
 
-          <div className="divider">
-            <span>o</span>
-          </div>
+          <div className="divider"><span>o</span></div>
 
           <button className="btn btn-google" onClick={() => alert('Iniciando sesión con Google')}>
             <div className="google-icon"></div>
@@ -106,14 +97,13 @@ const Auth: React.FC = () => {
           </button>
 
           <div className="register-link">
-            <a href="#" className="link" onClick={() => setShowRegister(true)}>
+            <button type="button" className="link" onClick={() => setShowRegister(true)}>
               ¿No tienes cuenta? Regístrate
-            </a>
+            </button>
           </div>
         </div>
       )}
 
-      {/* Register Card */}
       {showRegister && (
         <div className="auth-card">
           <div className="logo">$</div>
@@ -151,9 +141,9 @@ const Auth: React.FC = () => {
           </form>
 
           <div className="register-link">
-            <a href="#" className="link" onClick={() => setShowRegister(false)}>
+            <button type="button" className="link" onClick={() => setShowRegister(false)}>
               ¿Ya tienes cuenta? Inicia sesión
-            </a>
+            </button>
           </div>
         </div>
       )}
@@ -162,3 +152,4 @@ const Auth: React.FC = () => {
 };
 
 export default Auth;
+

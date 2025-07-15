@@ -1,22 +1,31 @@
-// src/components/LoginForm.jsx
+// src/modules/auth/components/LoginForm.jsx
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { login } from '../services/authService';
-import './LoginForm.css';
+import '../styles/LoginForm.css';
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const result = await login(email, password);
+
+      // ✅ Guardar datos del usuario en localStorage
       localStorage.setItem('token', result.token);
+      localStorage.setItem('nombre', result.nombre);   // para mostrar "HOLA, NOMBRE"
+      localStorage.setItem('email', result.email);     // por si se necesita más adelante
+      localStorage.setItem('id', result.id);           // opcional, útil para llamadas de perfil
+
+      // ✅ Redirigir al dashboard
       navigate('/bienvenido');
     } catch (error) {
-      alert('Credenciales incorrectas');
+      alert('Credenciales incorrectas o error del servidor');
+      console.error(error);
     }
   };
 

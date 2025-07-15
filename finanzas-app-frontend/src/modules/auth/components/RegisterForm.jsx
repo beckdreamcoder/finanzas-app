@@ -1,8 +1,8 @@
-// src/components/RegisterForm.jsx
+// src/modules/auth/components/RegisterForm.jsx
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { register } from '../services/authService';
-import './LoginForm.css'; // Reutilizamos el estilo del login
+import '../styles/LoginForm.css'; // Reutilizando estilos
 
 const RegisterForm = () => {
   const [nombre, setNombre] = useState('');

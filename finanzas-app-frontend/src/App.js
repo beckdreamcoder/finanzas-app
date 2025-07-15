@@ -1,15 +1,15 @@
-// src/App.js
-import { Routes, Route } from 'react-router-dom';
-import LoginForm from './components/LoginForm';
-import RegisterForm from './components/RegisterForm'; // <-- AÑADIR ESTA LÍNEA
-import Bienvenido from './components/Bienvenido';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import LoginForm from './modules/auth/components/LoginForm';
+import RegisterForm from './modules/auth/components/RegisterForm'; // ✅ nuevo
+import Bienvenido from './modules/inicio/pages/Bienvenido';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<LoginForm />} />
+      <Route path="/login" element={<LoginForm />} />
+      <Route path="/registrar" element={<RegisterForm />} /> {/* ✅ nueva ruta */}
       <Route path="/bienvenido" element={<Bienvenido />} />
-      <Route path="/registrar" element={<RegisterForm />} /> {/* <-- NUEVA RUTA */}
+      <Route path="*" element={<Navigate to="/login" />} />
     </Routes>
   );
 }
