@@ -1,0 +1,37 @@
+@import '../../styles/variables';
+
+.card {
+  background: white;
+  border-radius: $radius-md;
+  padding: $padding-md;
+  flex: 1;
+  box-shadow: $shadow-md;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  p {
+    font-size: 1rem;
+    color: $text-secondary;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin: 6px 0;
+  }
+
+  .positivo {
+    color: $color-success;
+  }
+
+  .negativo {
+    color: $color-danger;
+  }
+}
+
+body.modo-oscuro .card {
+  background-color: #333;
+  color: $text-light;
+}

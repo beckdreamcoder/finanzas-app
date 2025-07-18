@@ -1,6 +1,9 @@
 // src/modules/inicio/pages/Bienvenido.jsx
 
 import React from 'react';
+//Uso de sass
+import '../../../styles/pages/Bienvenido.scss';
+
 
 // ✅ Importaciones correctas (3 niveles arriba)
 import Sidebar from '../../../shared/components/Sidebar';
@@ -8,8 +11,7 @@ import Topbar from '../../../shared/components/TopBar';
 import CardResumen from '../../../shared/components/CardResumen';
 import Acciones from '../../../shared/components/Acciones';
 
-// ✅ Importa los estilos visuales
-import '../../../shared/styles/Bienvenido.css';
+
 
 const Bienvenido = () => {
   const nombre = localStorage.getItem('nombre') || 'Usuario';

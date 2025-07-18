@@ -1,0 +1,162 @@
+@import '../../styles/variables';
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: $padding-md;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.saludo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: $text-primary;
+}
+
+.acciones-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: $padding-sm;
+  position: relative;
+}
+
+.acciones-top button {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: $radius-md;
+  padding: 10px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.acciones-top button:hover {
+  background: #f0f0f0;
+}
+
+body.modo-oscuro .acciones-top button {
+  background: #444;
+  color: $text-light;
+  border: 1px solid #666;
+}
+
+.perfil-menu-container {
+  position: relative;
+}
+
+.menu-perfil {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 200px;
+  background: white;
+  border-radius: $radius-md;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  animation: slideDown 0.3s ease-out;
+
+  hr {
+    margin: 4px 0;
+    border: none;
+    border-top: 1px solid #eee;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-header {
+  padding: 10px 16px;
+  font-weight: bold;
+  color: $text-primary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-item {
+  padding: 10px 16px;
+  border: none; // ✅ Elimina borde
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: $color-danger;
+  transition: background 0.2s ease;
+  font-weight: 500;
+
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  // ✅ Evita estilos heredados
+  outline: none;
+  box-shadow: none;
+}
+
+.menu-item:focus {
+  outline: none;
+  box-shadow: none;
+}
+.menu-item:hover {
+  background-color: #f8f8f8;
+}
+
+body.modo-oscuro .menu-perfil {
+  background: #2c2c2c;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+body.modo-oscuro .menu-header {
+  color: #eee;
+}
+
+body.modo-oscuro .menu-item {
+  color: #ff7777;
+}
+
+body.modo-oscuro .menu-item:hover {
+  background-color: #3c3c3c;
+}
+
+@media (max-width: $bp-tablet) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .acciones-top {
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .menu-perfil {
+    right: 10px;
+    left: auto;
+    width: 90vw;
+    max-width: 280px;
+  }
+}
+
+.cerrar-sesion {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}

@@ -1,7 +1,13 @@
+import './styles/variables.scss';
+import './styles/theme.scss';
+import './styles/layout.scss';
+
 import { Routes, Route, Navigate } from 'react-router-dom';
 import LoginForm from './modules/auth/components/LoginForm';
 import RegisterForm from './modules/auth/components/RegisterForm'; // ✅ nuevo
 import Bienvenido from './modules/inicio/pages/Bienvenido';
+
+
 
 function App() {
   return (

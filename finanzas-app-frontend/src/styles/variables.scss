@@ -1,0 +1,36 @@
+// 🎨 Paleta de colores
+$color-primary: #007bff;
+$color-secondary: #2962ff;
+$color-success: #00c853;
+$color-warning: #fbc02d;
+$color-danger: #c62828;
+
+// 🌓 Fondo
+$light-bg: #fdfdfd;
+$dark-bg: #222;
+
+// 📄 Texto
+$text-primary: #333;
+$text-secondary: #555;
+$text-light: #f5f5f5;
+
+// 💡 Otros
+$hover-light-blue: #d0eaff;
+
+// 📏 Espaciado
+$padding-sm: 8px;
+$padding-md: 16px;
+$padding-lg: 24px;
+
+// 🔲 Bordes y sombras
+$radius-sm: 8px;
+$radius-md: 14px;
+$radius-lg: 20px;
+
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.05);
+$shadow-lg: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+// 🔧 Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-laptop: 1024px;

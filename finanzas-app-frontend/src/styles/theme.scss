@@ -1,0 +1,16 @@
+// src/styles/theme.scss
+
+@import './variables';
+
+body {
+  background-color: $light-bg;
+  color: $text-primary;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.modo-oscuro {
+  background-color: $dark-bg;
+  color: $text-light;
+}

@@ -1,4 +1,6 @@
 // src/shared/components/TopBar.jsx
+import '../styles/TopBar.scss';
+
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -64,7 +66,7 @@ const TopBar = ({ nombre }) => {
       <span className="menu-nombre">{nombre}</span>
     </div>
     <hr />
-    <button className="menu-item" onClick={cerrarSesion}>
+    <button className="menu-item cerrar-sesion" onClick={cerrarSesion}>
       🔓 Cerrar sesión
     </button>
   </div>

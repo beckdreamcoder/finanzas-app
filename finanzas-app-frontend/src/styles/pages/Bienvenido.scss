@@ -1,0 +1,29 @@
+@import '../variables';
+
+.saludo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: $text-primary;
+  margin-bottom: $padding-md;
+}
+
+.card-saldo {
+  background: linear-gradient(135deg, $color-success, #00bfa5);
+  color: white;
+  padding: $padding-lg;
+  border-radius: $radius-lg;
+  margin-bottom: $padding-md;
+  box-shadow: $shadow-lg;
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+}
+
+.resumen-ingresos-gastos {
+  display: flex;
+  gap: 24px;
+  margin-bottom: $padding-lg;
+  flex-wrap: wrap;
+}

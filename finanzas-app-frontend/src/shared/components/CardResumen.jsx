@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/CardResumen.scss';
 
 const CardResumen = ({ tipo, cantidad }) => {
   const esIngreso = tipo === 'ingresos';

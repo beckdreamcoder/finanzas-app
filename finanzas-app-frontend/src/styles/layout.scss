@@ -1,0 +1,28 @@
+@import './variables';
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.contenido {
+  flex: 1;
+  padding: $padding-lg;
+  background-color: $light-bg;
+  overflow-y: auto;
+  transition: background 0.3s ease;
+}
+
+body.modo-oscuro .contenido {
+  background-color: $dark-bg;
+}
+
+@media (max-width: $bp-tablet) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .contenido {
+    padding: $padding-md;
+  }
+}

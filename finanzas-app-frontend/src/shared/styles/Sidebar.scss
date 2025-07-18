@@ -1,0 +1,167 @@
+/* Mejoras completas al sidebar */
+@import '../../styles/variables';
+@import '../../styles/theme';
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 72px;
+  background-color: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: width 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.sidebar:hover,
+.sidebar.expandido {
+  width: 240px;
+}
+
+/* Contenedor principal debe contraerse también */
+.layout {
+  display: flex;
+}
+
+.layout .contenido {
+  flex-grow: 1;
+  margin-left: 72px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar:hover ~ .contenido,
+.sidebar.expandido ~ .contenido {
+  margin-left: 240px;
+}
+
+/* Logo */
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 25px 20px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.logo-dot {
+  width: 28px;
+  height: 28px;
+  background: $color-secondary;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.nav-superior {
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-links li {
+  padding: 12px;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  color: $text-primary;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-links li.activo,
+.nav-links li:hover {
+  background-color: $hover-light-blue;
+  color: $color-secondary;
+  font-weight: bold;
+}
+
+.nav-inferior {
+  border-top: 1px solid #eee;
+  padding: 0 20px;
+  padding-top: 8px;
+  padding-bottom: 16px;
+}
+
+.nav-links.ayuda li {
+  color: red;
+  font-weight: bold;
+}
+
+/* 🌙 Modo oscuro */
+body.modo-oscuro {
+  .sidebar {
+    background-color: $dark-bg;
+    color: $text-light;
+  }
+
+  .logo-dot {
+    background-color: $color-secondary;
+  }
+
+  .nav-links li {
+    color: #ccc;
+  }
+
+  .nav-links li.activo,
+  .nav-links li:hover {
+    background-color: #444;
+    color: #0af;
+  }
+
+  .nav-links.ayuda li {
+    color: #f66;
+  }
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    width: 0;
+    height: 100vh;
+    padding: 0;
+  }
+
+  .sidebar.expandido {
+    width: 240px;
+    padding: 20px 0;
+  }
+
+  .layout .contenido {
+    margin-left: 0;
+  }
+
+  .sidebar.expandido ~ .contenido {
+    margin-left: 240px;
+  }
+}
+
+/* Botón para expandir sidebar */
+.sidebar-toggle {
+  position: absolute;
+  top: 15px;
+  right: -20px;
+  background: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1001;
+}
