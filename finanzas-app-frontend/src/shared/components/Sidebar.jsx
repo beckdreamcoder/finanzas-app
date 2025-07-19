@@ -11,8 +11,8 @@ const Sidebar = () => (
     <div className="nav-superior">
       <ul className="nav-links">
         <li className="activo">🏠 INICIO</li>
-        <li>💳 MOVIMIENTO</li>
-        <li>📊 PRESUPUESTO</li>
+        <li>💳 MOVIMIENTOS</li>
+        <li>📊 PRESUPUESTOS</li>
         <li>💰 METAS DE AHORRO</li>
         <li>📈 REPORTES</li>
       </ul>
