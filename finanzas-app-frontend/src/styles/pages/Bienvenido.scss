@@ -2,28 +2,128 @@
 
 .saludo {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: $text-primary;
   margin-bottom: $padding-md;
 }
 
+// ✅ Tarjeta de saldo principal
 .card-saldo {
   background: linear-gradient(135deg, $color-success, #00bfa5);
   color: white;
-  padding: $padding-lg;
+  padding: 2.5rem;
   border-radius: $radius-lg;
-  margin-bottom: $padding-md;
-  box-shadow: $shadow-lg;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: all 0.3s ease;
+
+  .titulo-seccion {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    opacity: 0.9;
+    text-transform: uppercase;
+    //color: $text-secondary;
+    color: var(--text-primary);
+    background-color: var(--card-bg);
+  }
 
   h1 {
-    font-size: 3rem;
-    margin: 0;
+    font-size: 3.6rem;
+    font-weight: 800;
+    margin: 1rem 0;
+  }
+
+
+  .btn-ocultar {
+    margin: 0.5rem 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+  }
+
+  span {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    opacity: 0.85;
   }
 }
 
+// ✅ Ingresos y Gastos
 .resumen-ingresos-gastos {
   display: flex;
   gap: 24px;
-  margin-bottom: $padding-lg;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-saldo {
+  position: relative;
+
+  .btn-toggle-saldo {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 38px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+
+    svg {
+      font-size: 1.2rem;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+  }
+}
+
+// 👌 Responsive design
+@media (max-width: 768px) {
+  .card-saldo {
+    padding: 1.8rem 1.2rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .btn-ocultar {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+    }
+
+    span {
+      font-size: 0.85rem;
+    }
+  }
+
+  .resumen-ingresos-gastos {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
 }

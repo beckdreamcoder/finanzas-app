@@ -1,6 +1,7 @@
 package com.utp.finanzasApp.sales.infrastructure.repository;
 
 import com.utp.finanzasApp.sales.domain.model.Transaccion;
+import com.utp.finanzasApp.sales.domain.model.enums.TipoTransaccion;
 import com.utp.finanzasApp.sales.domain.repository.TransaccionRepository;
 import com.utp.finanzasApp.sales.infrastructure.entities.TransaccionEntity;
 import com.utp.finanzasApp.sales.infrastructure.mapper.TransaccionMapper;
@@ -14,7 +15,6 @@ import java.util.stream.Collectors;
 
 @Repository
 public class TransaccionRepositoryImpl implements TransaccionRepository {
-
     private final JpaTransaccionRepository jpaRepository;
     private final TransaccionMapper mapper;
 
@@ -44,9 +44,15 @@ public class TransaccionRepositoryImpl implements TransaccionRepository {
     }
 
     @Override
+    public List<TransaccionEntity> findByUsuarioIdAndTipo(Long usuarioId, TipoTransaccion tipo) {
+        return jpaRepository.findByUsuarioIdAndTipo(usuarioId, tipo);
+    }
+
+    @Override
     public void eliminarPorId(Long id) {
         jpaRepository.deleteById(id);  // Este método también debe estar implementado
     }
+
 
 }
 

@@ -9,7 +9,7 @@
 
 .acciones button {
   flex: 1;
-  background: white;
+  //background: white;
   border: none;
   padding: $padding-md;
   font-size: 1rem;
@@ -17,13 +17,17 @@
   box-shadow: $shadow-md;
   cursor: pointer;
   transition: all 0.2s ease;
+  color: var(--text-primary);
+  background-color: var(--card-bg);
+
 }
 
 .acciones button:hover {
   background-color: #f5f5f5;
+  transform: translateY(-4px);
 }
 
-body.modo-oscuro .acciones button {
+body.modo-oscuro .acciones button{
   background-color: #444;
   color: $text-light;
 }

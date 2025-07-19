@@ -24,4 +24,22 @@ public class SaldoController {
         double saldo = saldoService.calcularSaldo(usuarioId);
         return ResponseEntity.ok(saldo);
     }
+
+    // TOTAL DE INGRESOS
+    @GetMapping("/ingresos")
+    public ResponseEntity<Double> obtenerTotalIngresos(@RequestHeader("Authorization") String token) {
+        Long usuarioId = jwtUtil.obtenerUsuarioIdDesdeToken(token);
+        double totalIngresos = saldoService.obtenerTotalIngresos(usuarioId);
+        return ResponseEntity.ok(totalIngresos);
+    }
+
+    // TOTAL DE GASTOS
+    @GetMapping("/gastos")
+    public ResponseEntity<Double> obtenerTotalGastos(@RequestHeader("Authorization") String token) {
+        Long usuarioId = jwtUtil.obtenerUsuarioIdDesdeToken(token);
+        double totalGastos = saldoService.obtenerTotalGastos(usuarioId);
+        return ResponseEntity.ok(totalGastos);
+    }
+
+
 }

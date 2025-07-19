@@ -11,9 +11,11 @@
 }
 
 .saludo {
-  font-weight: 600;
+  color: var(--text-primary);
+  font-weight: bold;
   font-size: 1.2rem;
-  color: $text-primary;
+  background-color: var(--card-bg);
+  
 }
 
 .acciones-top {

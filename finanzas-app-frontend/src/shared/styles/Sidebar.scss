@@ -7,37 +7,39 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: 72px;
+  width: 240px; // ✅ MANTENER siempre expandido (no 72px)
   background-color: white;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: width 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   z-index: 1000;
   overflow: hidden;
 }
 
-.sidebar:hover,
-.sidebar.expandido {
-  width: 240px;
-}
+/* ❌ ELIMINAMOS hover y clase "expandido" dinámica */
+// .sidebar:hover,
+// .sidebar.expandido {
+//   width: 240px;
+// }
 
-/* Contenedor principal debe contraerse también */
+/* Contenedor principal */
 .layout {
   display: flex;
 }
 
 .layout .contenido {
   flex-grow: 1;
-  margin-left: 72px;
+  margin-left: 240px; // ✅ Siempre alineado con sidebar visible
   transition: margin-left 0.3s ease;
 }
 
-.sidebar:hover ~ .contenido,
-.sidebar.expandido ~ .contenido {
-  margin-left: 240px;
-}
+/* ❌ ELIMINAMOS efecto dinámico de expansión */
+// .sidebar:hover ~ .contenido,
+// .sidebar.expandido ~ .contenido {
+//   margin-left: 240px;
+// }
 
 /* Logo */
 .logo {
@@ -47,6 +49,8 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
+  color: var(--text-primary);
+  background-color: var(--card-bg);
 }
 
 .logo-dot {
@@ -59,7 +63,7 @@
 
 .nav-superior {
   flex-grow: 1;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .nav-links {
@@ -90,7 +94,7 @@
 
 .nav-inferior {
   border-top: 1px solid #eee;
-  padding: 0 20px;
+  padding: 0 10px;
   padding-top: 8px;
   padding-bottom: 16px;
 }
@@ -130,38 +134,37 @@ body.modo-oscuro {
 @media (max-width: 768px) {
   .sidebar {
     position: absolute;
-    width: 0;
+    width: 240px; // ✅ Siempre visible en móvil también
     height: 100vh;
-    padding: 0;
-  }
-
-  .sidebar.expandido {
-    width: 240px;
     padding: 20px 0;
   }
 
   .layout .contenido {
-    margin-left: 0;
+    margin-left: 240px; // ✅ Siempre respetar margen
   }
 
-  .sidebar.expandido ~ .contenido {
-    margin-left: 240px;
-  }
+  // .sidebar.expandido {
+  //   width: 240px;
+  // }
+
+  // .sidebar.expandido ~ .contenido {
+  //   margin-left: 240px;
+  // }
 }
 
-/* Botón para expandir sidebar */
-.sidebar-toggle {
-  position: absolute;
-  top: 15px;
-  right: -20px;
-  background: #fff;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
-  cursor: pointer;
-  z-index: 1001;
-}
+/* ❌ Botón de expansión (no usado ahora) */
+// .sidebar-toggle {
+//   position: absolute;
+//   top: 15px;
+//   right: -20px;
+//   background: #fff;
+//   border-radius: 50%;
+//   width: 30px;
+//   height: 30px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   box-shadow: 0 0 4px rgba(0,0,0,0.2);
+//   cursor: pointer;
+//   z-index: 1001;
+// }

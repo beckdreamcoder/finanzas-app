@@ -3,9 +3,10 @@ import '../styles/Acciones.scss';
 
 const Acciones = () => (
   <div className="acciones">
-    <button>💸 TRANSFERIR DINERO</button>
-    <button>💳 PAGAR SERVICIOS</button>
-    <button>💰 PRÉSTAMOS</button>
+    <button>💸 Transferir Dinero</button>
+    <button>💳 Pagar Servicios</button>
+    <button>💰 Préstamos</button>
+    <button>📈 Inversiones</button>
   </div>
 );
 
