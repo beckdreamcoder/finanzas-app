@@ -7,21 +7,38 @@
   flex: 1;
   box-shadow: $shadow-md;
   transition: transform 0.2s ease;
+  text-align: center;
+  min-width: 200px;
 
   &:hover {
     transform: translateY(-4px);
   }
 
+  .icono-card {
+    font-size: 2.6rem;
+    margin-bottom: 0.5rem;
+  }
+
   p {
     font-size: 1.3rem;
-    //color: $text-secondary;
+    font-weight: 600;
+    text-transform: uppercase;
     color: var(--text-primary);
     background-color: var(--card-bg);
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 6px 0;
+    font-weight: bold;
+    color: var(--text-primary);
+    background-color: var(--card-bg);
+  }
+
+  span {
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    background-color: var(--card-bg);
   }
 
   .positivo {
@@ -31,9 +48,54 @@
   .negativo {
     color: $color-danger;
   }
+
+  .balance {
+    color: white;
+  }
+}
+
+.card-balance {
+  background: linear-gradient(135deg, $color-success, #00bfa5);
+  color: white;
+}
+
+.card-ingresos {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #d1fae5;
+}
+
+.card-gastos {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
 }
 
 body.modo-oscuro .card {
   background-color: #333;
   color: $text-light;
+}
+
+
+.compacto {
+  padding: 0.6rem 0.8rem; // ⬅️ Reduce el ALTO
+
+  .icono-card {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .titulo-seccion {
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin: 0.2rem 0;
+  }
+
+  span {
+    font-size: 0.7rem;
+  }
 }

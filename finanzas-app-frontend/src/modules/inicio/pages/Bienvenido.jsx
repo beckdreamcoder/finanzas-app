@@ -1,18 +1,17 @@
 // src/modules/inicio/pages/Bienvenido.jsx
 
+// src/modules/inicio/pages/Bienvenido.jsx
+
 import React, { useEffect, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import axios from 'axios';
 
 import '../../../styles/pages/Bienvenido.scss';
-
-import Sidebar from '../../../shared/components/Sidebar';
-import Topbar from '../../../shared/components/TopBar';
+import MainLayout from '../../../shared/components/MainLayout';
 import CardResumen from '../../../shared/components/CardResumen';
 import Acciones from '../../../shared/components/Acciones';
 
 const Bienvenido = () => {
-  const nombre = localStorage.getItem('nombre') || 'Usuario';
   const [saldo, setSaldo] = useState(null);
   const [ingresos, setIngresos] = useState(null);
   const [gastos, setGastos] = useState(null);
@@ -41,48 +40,44 @@ const Bienvenido = () => {
   }, []);
 
   return (
-    <div className="layout">
-      <Sidebar />
-      <main className="contenido">
-        <Topbar nombre={nombre} />
+    <MainLayout>
+      <section className="panel-principal">
+        <div className="card-saldo">
+          <p className="titulo-seccion">SALDO TOTAL</p>
 
-        <section className="panel-principal">
-          <div className="card-saldo">
-            <p className="titulo-seccion">SALDO TOTAL</p>
+          <button
+            className="btn-toggle-saldo"
+            onClick={() => setMostrarSaldo(!mostrarSaldo)}
+            title={mostrarSaldo ? 'Ocultar saldo' : 'Mostrar saldo'}
+          >
+            {mostrarSaldo ? <FaEyeSlash /> : <FaEye />}
+          </button>
 
-            {/* Botón ojito */}
-           <button
-  className="btn-toggle-saldo"
-  onClick={() => setMostrarSaldo(!mostrarSaldo)}
-  title={mostrarSaldo ? 'Ocultar saldo' : 'Mostrar saldo'}
->
-  {mostrarSaldo ? <FaEyeSlash /> : <FaEye />}
-</button>
+          <h1>
+            {mostrarSaldo
+              ? saldo !== null
+                ? `S/ ${saldo.toLocaleString('es-PE', {
+                    minimumFractionDigits: 2,
+                  })}`
+                : 'Cargando...'
+              : ' S/ ********'}
+          </h1>
 
-            <h1>
-              {mostrarSaldo
-                ? saldo !== null
-                  ? `S/ ${saldo.toLocaleString('es-PE', { minimumFractionDigits: 2 })}`
-                  : 'Cargando...'
-                : ' S/ ********'}
-            </h1>
+          <span className="texto-ahorro">
+            {mostrarSaldo
+              ? '¡Estás a salvo del fin de quincena... por ahora!'
+              : 'Ocultando saldo por seguridad y tranquilidad mental.'}
+          </span>
+        </div>
 
-            <span className="texto-ahorro">
-              {mostrarSaldo
-                ? '¡Estás a salvo del fin de quincena... por ahora!'
-                : 'Ocultando saldo por seguridad y tranquilidad mental.'}
-            </span>
-          </div>
+        <div className="resumen-ingresos-gastos">
+          <CardResumen tipo="ingresos" cantidad={ingresos} />
+          <CardResumen tipo="gastos" cantidad={gastos} />
+        </div>
 
-          <div className="resumen-ingresos-gastos">
-            <CardResumen tipo="ingresos" cantidad={ingresos} />
-            <CardResumen tipo="gastos" cantidad={gastos} />
-          </div>
-
-          <Acciones />
-        </section>
-      </main>
-    </div>
+        <Acciones />
+      </section>
+    </MainLayout>
   );
 };
 

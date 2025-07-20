@@ -1,0 +1,121 @@
+@import '../../../styles/variables';
+
+.item-movimiento {
+  background-color: $light-bg;
+  color: $text-primary;
+  padding: 1rem 1.2rem;
+  border-radius: $radius-sm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $shadow-md;
+  margin-bottom: 0.8rem;
+  gap: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.ingreso {
+    border-left: 4px solid $color-success;
+
+    .monto {
+      color: $color-success;
+    }
+  }
+
+  &.gasto {
+    border-left: 4px solid $color-danger;
+
+    .monto {
+      color: $color-danger;
+    }
+  }
+
+  .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $text-primary;
+    }
+
+    .monto {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .fecha {
+      font-size: 0.75rem;
+      color: $text-secondary;
+    }
+  }
+
+  .acciones {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    .accion-btn {
+      background-color: $hover-light-blue;
+      color: $text-secondary;
+      border: none;
+      border-radius: $radius-sm;
+      padding: 0.4rem 0.6rem;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: $shadow-md;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: lighten($hover-light-blue, 5%);
+      }
+
+      &.editar {
+        color: $color-warning;
+      }
+
+      &.eliminar {
+        color: $color-danger;
+      }
+    }
+  }
+}
+
+// 🌙 Modo oscuro
+.dark {
+  .item-movimiento {
+    background-color: $dark-bg;
+    color: $text-light;
+
+    .info {
+      h3 {
+        color: $text-light;
+      }
+      .fecha {
+        color: lighten($text-secondary, 40%);
+      }
+    }
+
+    .acciones {
+      .accion-btn {
+        background-color: darken($hover-light-blue, 30%);
+        color: $text-light;
+
+        &:hover {
+          background-color: lighten($color-secondary, 10%);
+        }
+
+        &.editar {
+          color: $color-warning;
+        }
+
+        &.eliminar {
+          color: $color-danger;
+        }
+      }
+    }
+  }
+}

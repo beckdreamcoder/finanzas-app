@@ -1,0 +1,162 @@
+@import '../../../styles/variables';
+
+.modal-formulario {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .formulario-contenido {
+    background-color: $light-bg;
+    color: $text-primary;
+    border-radius: $radius-md;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: $shadow-lg;
+    position: relative;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    transition: background-color 0.3s ease;
+
+    .form-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      h2 {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .boton-cerrar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: $text-primary;
+      }
+    }
+
+    .toggle-tipo {
+      display: flex;
+      justify-content: center;
+      border-radius: $radius-sm;
+      overflow: hidden;
+      margin-top: 0.5rem;
+      gap: 0.5rem;
+
+      button {
+        flex: 1;
+        padding: 0.6rem;
+        border: none;
+        font-weight: bold;
+        border-radius: $radius-sm;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &.activo-ingreso {
+          background-color: $color-success;
+          color: white;
+        }
+
+        &.activo-gasto {
+          background-color: $color-danger;
+          color: white;
+        }
+
+        &:not(.activo-ingreso):not(.activo-gasto) {
+          background-color: #eee;
+          color: $text-primary;
+        }
+      }
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: $radius-sm;
+      font-size: 1rem;
+      background-color: white;
+      color: $text-primary;
+    }
+
+    .btn-guardar {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: $radius-sm;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &.ingreso {
+        background-color: $color-success;
+        color: white;
+
+        &:hover {
+          background-color: darken($color-success, 6%);
+        }
+      }
+
+      &.gasto {
+        background-color: $color-danger;
+        color: white;
+
+        &:hover {
+          background-color: darken($color-danger, 6%);
+        }
+      }
+    }
+  }
+}
+
+// ✅ MODO OSCURO AL FINAL
+@media (prefers-color-scheme: dark) {
+  .modal-formulario .formulario-contenido {
+    background-color: $dark-bg;
+    color: $text-light;
+
+    input,
+    select {
+      background-color: darken($dark-bg, 5%);
+      color: $text-light;
+      border: 1px solid lighten($dark-bg, 20%);
+    }
+
+    .boton-cerrar {
+      color: $text-light;
+    }
+
+    .toggle-tipo button {
+      color: $text-light;
+
+      &:not(.activo-ingreso):not(.activo-gasto) {
+        background-color: #444;
+      }
+    }
+  }
+}

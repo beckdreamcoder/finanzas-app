@@ -40,6 +40,4 @@ public class SaldoController {
         double totalGastos = saldoService.obtenerTotalGastos(usuarioId);
         return ResponseEntity.ok(totalGastos);
     }
-
-
 }

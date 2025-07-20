@@ -112,6 +112,7 @@ public class TransaccionController {
     }
 
     //*********************************** MEJORAR *************************************
+    //Esto no va.
     /*@GetMapping("/{metaId}/progreso")
     public ResponseEntity<ProgresoMetaDTO> obtenerProgresoMeta(
             @PathVariable Long metaId,

@@ -1,0 +1,21 @@
+.filtros-derecha {
+  display: flex;
+  gap: 0.6rem;
+
+  .input-busqueda,
+  .select-filtro {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+  }
+
+  .input-busqueda {
+    width: 220px;
+  }
+
+  .select-filtro {
+    width: 120px;
+  }
+}
