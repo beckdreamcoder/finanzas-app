@@ -17,7 +17,7 @@ const FiltroMovimientos = ({ busqueda, setBusqueda, filtro, setFiltro }) => {
         onChange={(e) => setFiltro(e.target.value)}
       >
         <option value="todos">Todos</option>
-        <option value="INGRESO">IngresosS</option>
+        <option value="INGRESO">IngresosSS</option>
         <option value="GASTO">Gastos</option>
       </select>
     </div>

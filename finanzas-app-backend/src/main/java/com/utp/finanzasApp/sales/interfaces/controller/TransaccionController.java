@@ -81,7 +81,7 @@ public class TransaccionController {
                 } catch (DateTimeParseException e) {
                     return ResponseEntity.badRequest().body("La fecha tiene un formato inválido. Usa yyyy-MM-dd.");
                 }
-                COMENTÉ ESTO ANTES DEL CORTE DE LUZ
+                COMENTÉ ESTO ANTES DEL CORTE DE LUZ - Que mala suerte
             }*/
 
             Transaccion actualizada = registroTransaccionService.actualizar(id, dto);
