@@ -12,6 +12,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -64,16 +67,22 @@ public class TransaccionController {
         try {
             Long usuarioIdDesdeToken = jwtUtil.obtenerUsuarioIdDesdeToken(token);
 
-            // Buscar la transacción por ID
             Transaccion transaccionExistente = consultaTransaccionesService.obtenerPorId(id);
 
-            // Validar que el usuario autenticado sea el dueño
-            if (!transaccionExistente.getUsuarioId().equals(usuarioIdDesdeToken)) {
+            /*if (!transaccionExistente.getUsuarioId().equals(usuarioIdDesdeToken)) {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN)
                         .body("No tienes permiso para modificar esta transacción.");
             }
 
-            // Actualizar la transacción
+            // ✅ Validar formato de fecha si viene
+            if (dto.getFecha() != null && !dto.getFecha().trim().isEmpty()) {
+                try {
+                    LocalDateTime.parse(dto.getFecha()); // esto lanza error si el formato es inválido
+                } catch (DateTimeParseException e) {
+                    return ResponseEntity.badRequest().body("La fecha tiene un formato inválido. Usa yyyy-MM-dd.");
+                }
+            }*/
+
             Transaccion actualizada = registroTransaccionService.actualizar(id, dto);
             return ResponseEntity.ok(actualizada);
 
@@ -85,6 +94,7 @@ public class TransaccionController {
                     .body("Error al actualizar la transacción.");
         }
     }
+
 
 
     //ELIMINAR UNA TRANSACCIÓN- Tu puedes eliminar solo las transacciones que te pertenecen.

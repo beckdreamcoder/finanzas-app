@@ -89,7 +89,7 @@ const Movimientos = () => {
         <Topbar nombre={nombre} />
 
         <section className="movimientos-page">
-          {/* Título + Filtros arriba */}
+          {/* Encabezado y Filtros */}
           <div className="encabezado-movimientos">
             <h2 className="titulo-seccion">Movimientos Recientes</h2>
             <FiltroMovimientos
@@ -100,22 +100,21 @@ const Movimientos = () => {
             />
           </div>
 
-          {/* Cards resumen */}
+          {/* Resumen */}
           <div className="resumen-movimientos">
             <CardResumen tipo="balance" cantidad={balanceTotal} compacto />
             <CardResumen tipo="ingresos" cantidad={ingresos || 0} compacto />
             <CardResumen tipo="gastos" cantidad={gastos || 0} compacto />
           </div>
 
-       {/* Encabezado lista de movimientos */}
-            {/* Título + Botón Agregar */}
-            <div className="seccion-movimientos-header">
+          {/* Lista + Botón */}
+          <div className="seccion-movimientos-header">
             <h3 className="subtitulo-movimientos">Todos los Movimientos</h3>
             <button className="btn-agregar" onClick={abrirModalNuevo}>
-                + Agregar Movimiento
+              + Agregar Movimiento
             </button>
-            </div>
-          {/* Lista de movimientos */}
+          </div>
+
           <div className="lista-movimientos">
             {movimientosFiltrados.length === 0 ? (
               <p className="sin-resultados">No se encontraron movimientos.</p>
@@ -132,7 +131,7 @@ const Movimientos = () => {
         </section>
       </main>
 
-      {/* Modal */}
+      {/* Modal Formulario */}
       {mostrarModal && (
         <div className="modal-confirmacion">
           <div className="modal-contenido">
@@ -140,9 +139,10 @@ const Movimientos = () => {
               movimientoActual={movimientoActual}
               modoEdicion={modoEdicion}
               onCancel={cancelarFormulario}
-              onSuccess={() => {
-                cargarMovimientos();
-                cargarTotales();
+              onClose={cancelarFormulario} // ✅ Esto es lo que resuelve tu error
+              onSuccess={async () => {
+                await cargarMovimientos();
+                await cargarTotales();
                 cancelarFormulario();
               }}
             />

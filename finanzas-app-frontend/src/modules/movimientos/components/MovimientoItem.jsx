@@ -35,9 +35,10 @@ const MovimientoItem = ({ movimiento, onEditar, onEliminar }) => {
         <button className="accion-btn editar" onClick={() => onEditar(movimiento)}>
           ✏️
         </button>
-        <button className="accion-btn eliminar" onClick={() => onEliminar(movimiento)}>
+        
+        {/* <button className="accion-btn eliminar" onClick={() => onEliminar(movimiento)}>
           🗑️
-        </button>
+        </button> */}
       </div>
     </div>
   );

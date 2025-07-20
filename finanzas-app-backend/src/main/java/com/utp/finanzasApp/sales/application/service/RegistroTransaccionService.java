@@ -60,9 +60,11 @@ public class RegistroTransaccionService {
         transaccionExistente.setMonto(dto.getMonto());
 
         // ✅ Usamos la fecha del DTO, pero la hora actual
-        LocalDate fecha = LocalDate.parse(dto.getFecha());
-        transaccionExistente.setFecha(fecha.atTime(LocalTime.now())); // ← esto combina la fecha del DTO con la hora actual
-
+        /*if (dto.getFecha() != null && !dto.getFecha().trim().isEmpty()) {
+            LocalDate fecha = LocalDate.parse(dto.getFecha());
+            // Mantén la hora actual (si así lo deseas), o conserva la original
+            transaccionExistente.setFecha(fecha.atTime(transaccionExistente.getFecha().toLocalTime()));
+        }*/
         transaccionExistente.setTipo(TipoTransaccion.valueOf(dto.getTipo().toUpperCase()));
 
         return transaccionRepository.guardar(transaccionExistente);
