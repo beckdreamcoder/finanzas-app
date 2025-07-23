@@ -1,0 +1,64 @@
+
+
+/* =========================
+   SCSS: MetasAhorro.scss
+========================= */
+
+// src/modules/metasAhorro/styles/MetasAhorro.scss
+@import '../../../styles/variables';
+
+.metas-page {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-lg;
+
+  .encabezado-metas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .titulo-seccion {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: $text-primary;
+    }
+
+    .btn-agregar {
+      padding: 0.5rem 1.2rem;
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: white;
+      background-color: $color-success;
+      border: none;
+      border-radius: $radius-sm;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: darken($color-success, 5%);
+      }
+    }
+  }
+
+  .resumen-metas {
+    display: flex;
+    gap: $padding-md;
+    flex-wrap: wrap;
+  }
+
+  .lista-metas {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sin-resultados {
+    font-size: 1rem;
+    color: $text-secondary;
+    text-align: center;
+    margin-top: $padding-md;
+  }
+}
+
+body.modo-oscuro .metas-page .titulo-seccion {
+  color: $text-light;
+}

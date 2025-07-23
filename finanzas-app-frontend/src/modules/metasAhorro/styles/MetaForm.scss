@@ -1,0 +1,134 @@
+@import '../../../styles/variables';
+
+.modal-formulario {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.formulario-contenido {
+  background-color: #fff;
+  border-radius: $radius-md;
+  padding: $padding-lg;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: $shadow-lg;
+  position: relative;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: $padding-md;
+    color: $text-primary;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: $padding-sm;
+
+    label {
+      font-weight: bold;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+      color: $text-primary;
+    }
+
+    input,
+    select {
+      padding: 0.55rem 1rem;
+      font-size: 1rem;
+      border-radius: $radius-sm;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      color: $text-primary;
+      transition: border 0.3s ease;
+
+      &:focus {
+        border-color: $color-success;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 200, 83, 0.2);
+      }
+    }
+
+    .btn-guardar {
+      margin-top: $padding-sm;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: $radius-sm;
+      background-color: $color-success;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: darken($color-success, 5%);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $padding-md;
+
+  .boton-cerrar {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $text-secondary;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-danger;
+    }
+  }
+}
+
+// Modo oscuro
+body.modo-oscuro {
+  .formulario-contenido {
+    background-color: $dark-bg;
+    color: $text-light;
+  }
+
+  input,
+  select {
+    background-color: $dark-bg;
+    color: $text-light;
+    border-color: #444;
+  }
+
+  .boton-cerrar {
+    color: $text-light;
+
+    &:hover {
+      color: $color-danger;
+    }
+  }
+
+  .btn-guardar {
+    background-color: lighten($color-success, 5%);
+
+    &:hover {
+      background-color: $color-success;
+    }
+  }
+}

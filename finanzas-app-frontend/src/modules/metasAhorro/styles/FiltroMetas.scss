@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+
+.filtro-metas {
+  display: flex;
+  align-items: center;
+  margin-bottom: $padding-md;
+
+  .input-filtro {
+    width: 260px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: $radius-sm;
+    background-color: #fff;
+    color: $text-primary;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: $color-success;
+      box-shadow: 0 0 0 2px rgba(0, 200, 83, 0.2);
+      outline: none;
+    }
+  }
+
+  body.modo-oscuro & .input-filtro {
+    background-color: $dark-bg;
+    color: $text-light;
+    border-color: #444;
+  }
+}

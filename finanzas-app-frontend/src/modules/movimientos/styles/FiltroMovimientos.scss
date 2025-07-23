@@ -4,7 +4,6 @@
   display: flex;
   gap: 0.75rem;
   align-items: center;
-  flex-wrap: wrap;// centra verticalmente ambos elementos
 
   .input-busqueda,
   .select-filtro {
@@ -19,7 +18,9 @@
   }
 
   .input-busqueda {
-    width: 280px;
+     position: relative;
+     top: 7px; // prueba con 1px o 2px según se vea mejor
+     width: 280px;
     
     
     &:focus {

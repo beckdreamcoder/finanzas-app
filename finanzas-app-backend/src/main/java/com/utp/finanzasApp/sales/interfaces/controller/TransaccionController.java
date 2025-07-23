@@ -54,6 +54,9 @@ public class TransaccionController {
     ) {
         Long usuarioId = jwtUtil.obtenerUsuarioIdDesdeToken(token);
         List<Transaccion> transacciones = consultaTransaccionesService.obtenerPorUsuario(usuarioId);
+        // Ordenar por fecha descendente (más reciente a más antigua)
+        transacciones.sort((t1, t2) -> t2.getFecha().compareTo(t1.getFecha()));
+
         return ResponseEntity.ok(transacciones);
     }
 

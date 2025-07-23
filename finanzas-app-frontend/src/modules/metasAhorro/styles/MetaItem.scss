@@ -1,0 +1,149 @@
+@import '../../../styles/variables';
+
+.meta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: $radius-md;
+  padding: $padding-md;
+  margin-bottom: $padding-md;
+  box-shadow: $shadow-md;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+
+  .meta-info {
+    flex: 1;
+
+    h4 {
+      margin: 0 0 $padding-sm 0;
+      color: $color-primary;
+    }
+
+    p {
+      margin: 0.2rem 0;
+      font-size: 0.95rem;
+      color: $text-secondary;
+    }
+
+    .barra-progreso {
+      background: #eee;
+      border-radius: $radius-sm;
+      height: 10px;
+      margin: $padding-sm 0;
+
+      .relleno {
+        height: 100%;
+        border-radius: $radius-sm;
+        transition: width 0.4s ease;
+
+        &.barra-roja {
+          background-color: #e74c3c;
+        }
+
+        &.barra-amarilla {
+          background-color: #f1c40f;
+        }
+
+        &.barra-verde {
+          background-color: #2ecc71;
+        }
+
+        &.barra-azul {
+          background-color: #3498db;
+        }
+      }
+    }
+
+    .porcentaje {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: $text-primary;
+    }
+
+    .detalles-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.3rem 1rem;
+      margin-top: $padding-sm;
+      margin-bottom: $padding-sm;
+
+      p {
+        margin: 0;
+        font-size: 0.88rem;
+        color: $text-secondary;
+
+        span {
+          font-weight: bold;
+          color: $text-primary;
+        }
+      }
+    }
+
+    .mensaje-motivacional {
+      font-style: italic;
+      margin: $padding-sm 0;
+      font-size: 0.9rem;
+      color: $text-secondary;
+    }
+
+    .btn-aportar {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background-color: $color-primary;
+      color: white;
+      border: none;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      border-radius: $radius-sm;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($color-primary, 10%);
+      }
+    }
+  }
+
+  .meta-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-left: $padding-md;
+
+    button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: $text-secondary;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  body.modo-oscuro & {
+    background-color: $dark-bg;
+
+    .meta-info p,
+    .porcentaje,
+    .mensaje-motivacional,
+    .detalles-meta p {
+      color: $text-light;
+    }
+
+    .btn-aportar {
+      background-color: lighten($color-primary, 5%);
+
+      &:hover {
+        background-color: lighten($color-primary, 15%);
+      }
+    }
+  }
+}

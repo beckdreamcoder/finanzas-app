@@ -25,7 +25,7 @@ const Sidebar = () => {
           <li className={esActivo('/presupuestos')} onClick={() => navigate('/presupuestos')}>
             📊 PRESUPUESTOS
           </li>
-          <li className={esActivo('/metas')} onClick={() => navigate('/metas')}>
+          <li className={esActivo('/metas-ahorro')} onClick={() => navigate('/metas-ahorro')}>
             💰 METAS DE AHORRO
           </li>
           <li className={esActivo('/reportes')} onClick={() => navigate('/reportes')}>
