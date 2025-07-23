@@ -86,8 +86,7 @@ const MetasAhorro = () => {
           <div className="encabezado-metas">
             <h2 className="titulo-seccion">Mis Metas de Ahorro</h2>
             <FiltroMetas filtroTexto={filtroTexto} setFiltroTexto={setFiltroTexto} />
-            <button className="btn-agregar" onClick={abrirModalNueva}>
-              + Nueva Meta
+            <button className="btn-agregar" onClick={abrirModalNueva}> + Nueva Meta
             </button>
           </div>
 
