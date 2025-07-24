@@ -25,11 +25,19 @@ public class ReporteFinancieroService {
     }
 
     public List<MovimientoDTO> obtenerMovimientosUsuario(Long usuarioId, LocalDateTime desde, LocalDateTime hasta) {
+        if (desde != null && hasta != null && desde.toLocalDate().equals(hasta.toLocalDate())) {
+            desde = desde.toLocalDate().atStartOfDay();
+            hasta = desde.toLocalDate().atTime(23, 59, 59, 999_000_000);
+        }
+
+        final LocalDateTime finalDesde = desde;
+        final LocalDateTime finalHasta = hasta;
+
         return transaccionRepository.obtenerPorUsuario(usuarioId).stream()
                 .filter(transaccion -> {
                     LocalDateTime fecha = transaccion.getFecha();
-                    return (desde == null || !fecha.isBefore(desde)) &&
-                            (hasta == null || !fecha.isAfter(hasta));
+                    return (finalDesde == null || !fecha.isBefore(finalDesde)) &&
+                            (finalHasta == null || !fecha.isAfter(finalHasta));
                 })
                 .map(transaccion -> {
                     MovimientoDTO dto = new MovimientoDTO();

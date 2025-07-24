@@ -1,0 +1,157 @@
+@import '../../../styles/variables';
+
+.reporte-container {
+  padding: $padding-xl;
+  background-color: $light-bg;
+  color: $text-primary;
+  border-radius: $radius-lg;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: 2rem auto;
+
+  .titulo-seccion {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: $padding-lg;
+    color: $color-primary;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before {
+      content: "📄";
+      font-size: 1.5rem;
+    }
+  }
+
+  .filtros-reporte {
+    display: flex;
+    flex-direction: column;
+    gap: $padding-md;
+    background-color: lighten($light-bg, 2%);
+    padding: $padding-lg;
+    border-radius: $radius-md;
+    border: 1px solid #e8e8e8;
+    transition: background-color 0.3s ease;
+
+    label {
+      font-weight: 600;
+      color: $text-primary;
+      margin-bottom: 0.2rem;
+    }
+
+    select,
+    input[type='datetime-local'] {
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: $radius-sm;
+      font-size: 1rem;
+      background-color: white;
+      color: $text-primary;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: $color-primary;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+      }
+    }
+
+    .fechas-personalizadas {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $padding-sm;
+
+      label {
+        grid-column: span 2;
+        margin-top: $padding-sm;
+        font-size: 0.95rem;
+        color: $text-secondary;
+      }
+    }
+
+    .btn-generar {
+      margin-top: $padding-md;
+      padding: 0.9rem 1.5rem;
+      background: linear-gradient(to right, $color-primary, darken($color-primary, 10%));
+      color: white;
+      border: none;
+      border-radius: $radius-md;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba($color-primary, 0.2);
+
+      &:hover {
+        background: linear-gradient(to right, darken($color-primary, 10%), darken($color-primary, 15%));
+        box-shadow: 0 6px 14px rgba($color-primary, 0.3);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba($color-primary, 0.25);
+      }
+    }
+  }
+
+  // 🌙 Dark Mode Styles
+  body.modo-oscuro & {
+    background-color: $dark-bg;
+    color: $text-light;
+
+    .titulo-seccion {
+      color: $color-accent;
+    }
+
+    .filtros-reporte {
+      background-color: darken($dark-bg, 4%);
+      border-color: #444;
+
+      label {
+        color: $text-light;
+      }
+
+      select,
+      input[type='datetime-local'] {
+        background-color: $dark-bg;
+        color: $text-light;
+        border-color: #555;
+
+        &:focus {
+          border-color: $color-accent;
+          box-shadow: 0 0 0 3px rgba($color-accent, 0.25);
+        }
+      }
+
+      .btn-generar {
+        background: linear-gradient(to right, $color-accent, darken($color-accent, 8%));
+
+        &:hover {
+          background: linear-gradient(to right, darken($color-accent, 10%), darken($color-accent, 15%));
+          box-shadow: 0 6px 14px rgba($color-accent, 0.3);
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 4px rgba($color-accent, 0.3);
+        }
+      }
+    }
+  }
+
+  // 📱 Responsive tweaks
+  @media (max-width: 600px) {
+    .filtros-reporte {
+      padding: $padding-md;
+
+      .fechas-personalizadas {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-generar {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
