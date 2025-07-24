@@ -8,7 +8,7 @@
 /* Estilo del cuerpo */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: linear-gradient(135deg, #a8e6cf 0%, #88d8a3 100%);
+    background: linear-gradient(135deg, #b2f7ef 0%, #a0eec0 50%, #d7ffe3 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;

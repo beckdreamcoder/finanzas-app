@@ -10,8 +10,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #a8e6cf;
+  background: linear-gradient(135deg, #d0e6ff 0%, #c2f0ea 50%, #fceabb 100%);
+  animation: fadeIn 0.6s ease-in-out;
 }
+
 
 .form-card {
   background: white;
