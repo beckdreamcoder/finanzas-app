@@ -155,7 +155,6 @@ const MetaForm = ({ metaActual, modoEdicion, onCancel, onSuccess }) => {
             name="fechaLimite"
             value={formData.fechaLimite}
             onChange={handleChange}
-            disabled={modoEdicion}
           />
 
           <label>Frecuencia</label>

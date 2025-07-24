@@ -1,4 +1,5 @@
 // src/modules/metasAhorro/components/MetaItem.jsx
+// src/modules/metasAhorro/components/MetaItem.jsx
 import React from 'react';
 import '../styles/MetaItem.scss';
 
@@ -7,34 +8,56 @@ const MetaItem = ({ meta, onEditar, onEliminar, onAportar }) => {
 
   const getColorPorcentaje = (valor) => {
     if (valor >= 100) return 'completed';
-    if (valor >= 75) return 'green';
-    if (valor >= 25) return 'yellow';
-    return 'red';
+    if (valor >= 75) return 'barra-verde';
+    if (valor >= 25) return 'barra-amarilla';
+    return 'barra-roja';
   };
+
+  const fechaLimite = new Date(meta.fechaLimite);
+  const fechaActual = new Date(meta.progreso?.fechaActual || new Date());
+  const estaVencida = fechaActual > fechaLimite;
 
   return (
     <div className="meta-item">
       <div className="meta-info">
         <h4>{meta.descripcion}</h4>
 
-        <div className="meta-detalles">
-          <p><strong>Objetivo:</strong> S/ {meta.montoObjetivo.toFixed(2)}</p>
-          <p><strong>Ahorrado:</strong> S/ {meta.montoActual?.toFixed(2) || 0}</p>
-          <p><strong>Fecha límite:</strong> {meta.fechaLimite}</p>
-          <p><strong>Fecha actual:</strong> {meta.fechaActual}</p>
-          <p><strong>Restante:</strong> S/ {meta.montoFaltante?.toFixed(2)}</p>
-          <p><strong>Aporte sugerido hoy:</strong> <span className="aporte">S/ {meta.aporteSugerido?.toFixed(2)}</span></p>
-          <p><strong>Estado:</strong> {meta.cumplida ? '✅ Completada' : '⏳ En progreso'}</p>
+        <div className="detalles-meta">
+          <p><span>🎯 Objetivo:</span> S/ {meta.montoObjetivo.toFixed(2)}</p>
+          <p><span>💰 Ahorrado:</span> S/ {meta.montoActual?.toFixed(2) || 0}</p>
+          <p><span>📅 Fecha límite:</span> {meta.fechaLimite}</p>
+          <p><span>🗓️ Hoy:</span> {meta.progreso?.fechaActual || '-'}</p>
+          <p><span>🔻 Restante:</span> S/ {meta.progreso?.montoFaltante?.toFixed(2) || '0.00'}</p>
+          <p><span>💡 Aporte sugerido:</span> S/ {meta.progreso?.aporteSugerido?.toFixed(2) || '0.00'}</p>
+          <p><span>📊 Estado:</span> {meta.cumplida ? '✅ Completada' : estaVencida ? '⚠️ Vencida' : '⏳ En progreso'}</p>
         </div>
 
         <div className="barra-progreso">
-          <div className={`relleno ${getColorPorcentaje(porcentaje)}`} style={{ width: `${porcentaje}%` }} />
+          <div
+            className={`relleno ${getColorPorcentaje(porcentaje)}`}
+            style={{ width: `${porcentaje}%` }}
+          />
         </div>
+
         <p className="porcentaje">{porcentaje.toFixed(1)}% alcanzado</p>
 
-        <p className="mensaje-motivacional">{meta.mensajeMotivacional}</p>
+        {meta.progreso?.mensajeMotivacional && (
+          <p className="mensaje-motivacional">📝 {meta.progreso.mensajeMotivacional}</p>
+        )}
 
-        <button className="btn-aportar" onClick={onAportar}>Aportar</button>
+        {estaVencida && (
+          <p className="mensaje-vencida">
+            ⚠️ Meta vencida - elimina la meta para recuperar el dinero
+          </p>
+        )}
+
+        <button
+          className="btn-aportar"
+          onClick={onAportar}
+          disabled={estaVencida}
+        >
+          Aportar
+        </button>
       </div>
 
       <div className="meta-acciones">

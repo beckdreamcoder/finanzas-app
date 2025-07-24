@@ -23,10 +23,24 @@
       color: $color-primary;
     }
 
-    p {
-      margin: 0.2rem 0;
-      font-size: 0.95rem;
-      color: $text-secondary;
+    .detalles-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.3rem 1.5rem;
+      margin-top: $padding-sm;
+      margin-bottom: $padding-sm;
+      
+
+      p {
+        margin: 0;
+        font-size: 0.92rem;
+        color: $text-secondary;
+
+        span {
+          font-weight: bold;
+          color: $text-secondary;
+        }
+      }
     }
 
     .barra-progreso {
@@ -34,11 +48,14 @@
       border-radius: $radius-sm;
       height: 10px;
       margin: $padding-sm 0;
+      margin-top: 2.5rem; // 👈 aquí damos espacio hacia arriba
+      margin-bottom: 0.7rem; // 👈 espacio hacia el texto inferior (porcentaje)
 
       .relleno {
         height: 100%;
         border-radius: $radius-sm;
         transition: width 0.4s ease;
+        
 
         &.barra-roja {
           background-color: #e74c3c;
@@ -52,7 +69,7 @@
           background-color: #2ecc71;
         }
 
-        &.barra-azul {
+        &.completed {
           background-color: #3498db;
         }
       }
@@ -64,30 +81,18 @@
       color: $text-primary;
     }
 
-    .detalles-meta {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.3rem 1rem;
-      margin-top: $padding-sm;
-      margin-bottom: $padding-sm;
-
-      p {
-        margin: 0;
-        font-size: 0.88rem;
-        color: $text-secondary;
-
-        span {
-          font-weight: bold;
-          color: $text-primary;
-        }
-      }
-    }
-
     .mensaje-motivacional {
       font-style: italic;
       margin: $padding-sm 0;
       font-size: 0.9rem;
       color: $text-secondary;
+    }
+
+    .mensaje-vencida {
+    margin: 0.4rem 0 0.7rem 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #e74c3c;
     }
 
     .btn-aportar {
