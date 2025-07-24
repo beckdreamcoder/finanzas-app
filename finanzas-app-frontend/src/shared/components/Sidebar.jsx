@@ -22,14 +22,14 @@ const Sidebar = () => {
           <li className={esActivo('/movimientos')} onClick={() => navigate('/movimientos')}>
             💳 MOVIMIENTOS
           </li>
-          <li className={esActivo('/presupuestos')} onClick={() => navigate('/presupuestos')}>
+          {/*<li className={esActivo('/presupuestos')} onClick={() => navigate('/presupuestos')}>
             📊 PRESUPUESTOS
-          </li>
+          </li>*/}
           <li className={esActivo('/metas-ahorro')} onClick={() => navigate('/metas-ahorro')}>
             💰 METAS DE AHORRO
           </li>
           <li className={esActivo('/reportes')} onClick={() => navigate('/reportes')}>
-            📈 REPORTES
+            📊 REPORTES
           </li>
         </ul>
       </div>
