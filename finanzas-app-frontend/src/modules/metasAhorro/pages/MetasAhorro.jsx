@@ -129,7 +129,24 @@ cantidad={totalObjetivo}
   icono="💰"
   compacto
 />
-          </div>
+</div>
+
+<div className="leyenda-progreso">
+  <h4>🎯 Leyenda de progreso</h4>
+  <div className="item-leyenda">
+    <span className="color-box barra-roja"></span> Menos del 25% ahorrado
+  </div>
+  <div className="item-leyenda">
+    <span className="color-box barra-amarilla"></span> Entre 25% y 74% ahorrado
+  </div>
+  <div className="item-leyenda">
+    <span className="color-box barra-verde"></span> Entre 75% y 99% ahorrado
+  </div>
+  <div className="item-leyenda">
+    <span className="color-box completed"></span> Meta completada (100%)
+  </div>
+</div>
+
 
           <div className="lista-metas">
             {metasFiltradas.length === 0 ? (
@@ -191,9 +208,9 @@ cantidad={totalObjetivo}
               await aportarMeta(token, metaActual.id, monto);
               await cargarMetas();
               cancelarAporte();
-              Swal.fire('✅ Aporte realizado exitosamente.', '', 'success');
+              Swal.fire('Aporte realizado exitosamente.', '', 'success');
             } catch (error) {
-              console.error('❌ Error al aportar:', error);
+              console.error('Error al aportar:', error);
               Swal.fire('Error', 'Hubo un error al realizar el aporte.', 'error');
             }
           }}
