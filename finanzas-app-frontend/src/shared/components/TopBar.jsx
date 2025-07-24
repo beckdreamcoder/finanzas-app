@@ -1,14 +1,17 @@
 // src/shared/components/TopBar.jsx
+// src/shared/components/TopBar.jsx
 import '../styles/TopBar.scss';
-
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const TopBar = ({ nombre }) => {
   const [modoOscuro, setModoOscuro] = useState(false);
   const [menuAbierto, setMenuAbierto] = useState(false);
   const menuRef = useRef(null);
   const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);
 
   const toggleModo = () => {
     setModoOscuro(!modoOscuro);
@@ -20,11 +23,23 @@ const TopBar = ({ nombre }) => {
   };
 
   const cerrarSesion = () => {
-    localStorage.clear(); // ✅ Borra token, nombre, email, id
-    navigate('/'); // Redirige a login
+    MySwal.fire({
+      title: '¿Cerrar sesión?',
+      text: '¿Estás seguro de que deseas cerrar tu sesión?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Sí, cerrar sesión',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.clear();
+        navigate('/');
+      }
+    });
   };
 
-  // Cierra el menú si se hace clic fuera
   useEffect(() => {
     const manejarClickFuera = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -60,17 +75,17 @@ const TopBar = ({ nombre }) => {
 
         <div className="perfil-menu-container" ref={menuRef}>
           <button onClick={toggleMenu} title="Perfil">👤</button>
-         {menuAbierto && (
-  <div className="menu-perfil">
-    <div className="menu-header">
-      <span className="menu-nombre">{nombre}</span>
-    </div>
-    <hr />
-    <button className="menu-item cerrar-sesion" onClick={cerrarSesion}>
-      🔓 Cerrar sesión
-    </button>
-  </div>
-)}
+          {menuAbierto && (
+            <div className="menu-perfil">
+              <div className="menu-header">
+                <span className="menu-nombre">{nombre}</span>
+              </div>
+              <hr />
+              <button className="menu-item cerrar-sesion" onClick={cerrarSesion}>
+                🔓 Cerrar sesión
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </header>
