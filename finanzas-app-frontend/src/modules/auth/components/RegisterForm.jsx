@@ -1,8 +1,10 @@
 // src/modules/auth/components/RegisterForm.jsx
+// src/modules/auth/components/RegisterForm.jsx
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { register } from '../services/authService';
 import '../styles/LoginForm.css'; // Reutilizando estilos
+import Swal from 'sweetalert2';
 
 const RegisterForm = () => {
   const [nombre, setNombre] = useState('');
@@ -14,10 +16,21 @@ const RegisterForm = () => {
     e.preventDefault();
     try {
       await register(nombre, email, password);
-      alert('Usuario registrado correctamente');
-      navigate('/');
+      Swal.fire({
+        icon: 'success',
+        title: '¡Registro exitoso!',
+        text: 'Tu cuenta ha sido creada correctamente.',
+        confirmButtonColor: '#3085d6'
+      }).then(() => {
+        navigate('/');
+      });
     } catch (error) {
-      alert('Error al registrar');
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al registrar',
+        text: 'Por favor, intenta nuevamente.',
+        confirmButtonColor: '#d33'
+      });
     }
   };
 
