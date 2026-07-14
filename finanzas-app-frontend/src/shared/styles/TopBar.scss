@@ -11,11 +11,11 @@
 }
 
 .saludo {
-  color: var(--text-primary);
-  font-weight: bold;
-  font-size: 1.2rem;
-  background-color: var(--card-bg);
-  
+  color: var(--text-main, #fff);
+  font-weight: 700;
+  font-size: 1.25rem;
+  background: transparent !important; // ✅ ELIMINADO EL CUADRO AZUL DETRÁS DEL SALUDO
+  margin: 0;
 }
 
 .acciones-top {
@@ -93,20 +93,16 @@ body.modo-oscuro .acciones-top button {
 
 .menu-item {
   padding: 10px 16px;
-  border: none; // ✅ Elimina borde
+  border: none;
   background: transparent;
   text-align: left;
   cursor: pointer;
   color: $color-danger;
   transition: background 0.2s ease;
   font-weight: 500;
-
-
   display: flex;
   align-items: center;
   gap: 8px;
-
-  // ✅ Evita estilos heredados
   outline: none;
   box-shadow: none;
 }

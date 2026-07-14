@@ -1,101 +1,100 @@
 @import '../../styles/variables';
 
 .card {
-  background: white;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--card-border, #e2e8f0);
   border-radius: $radius-md;
   padding: $padding-md;
   flex: 1;
-  box-shadow: $shadow-md;
-  transition: transform 0.2s ease;
+  box-shadow: var(--card-shadow, $shadow-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
   min-width: 200px;
 
   &:hover {
     transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow, $shadow-lg);
   }
 
   .icono-card {
     font-size: 2.6rem;
     margin-bottom: 0.5rem;
+    background: transparent;
   }
 
   p {
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.15rem;
+    font-weight: 700;
     text-transform: uppercase;
-    color: var(--text-primary);
-    background-color: var(--card-bg);
+    color: var(--text-main);
+    background: transparent !important; // ✅ ELIMINADA FRANJA AZUL DE FONDO
+    margin: 0 0 6px 0;
   }
 
   h3 {
     font-size: 1.8rem;
     margin: 6px 0;
-    font-weight: bold;
-    color: var(--text-primary);
-    background-color: var(--card-bg);
+    font-weight: 800;
+    color: var(--text-main);
+    background: transparent !important; // ✅ ELIMINADA FRANJA AZUL DE FONDO
   }
 
   span {
-    font-size: 0.8rem;
-    color: var(--text-primary);
-    background-color: var(--card-bg);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: transparent !important; // ✅ ELIMINADA FRANJA AZUL DE FONDO
   }
 
   .positivo {
-    color: $color-success;
+    color: $color-success !important;
   }
 
   .negativo {
-    color: $color-danger;
+    color: $color-danger !important;
   }
 
   .balance {
-    color: white;
+    color: #2962ff !important;
   }
 }
 
 .card-balance {
-  background: linear-gradient(135deg, $color-success, #00bfa5);
-  color: white;
+  background: linear-gradient(135deg, $color-success, #00bfa5) !important;
+  color: white !important;
+
+  p, h3, span {
+    color: white !important;
+  }
 }
 
 .card-ingresos {
-  background-color: #ecfdf5;
-  color: #047857;
-  border: 1px solid #d1fae5;
+  border: 1px solid rgba(0, 200, 83, 0.25);
 }
 
 .card-gastos {
-  background-color: #fef2f2;
-  color: #b91c1c;
-  border: 1px solid #fecaca;
+  border: 1px solid rgba(239, 83, 80, 0.25);
 }
-
-body.modo-oscuro .card {
-  background-color: #333;
-  color: $text-light;
-}
-
 
 .compacto {
-  padding: 0.6rem 0.8rem; // ⬅️ Reduce el ALTO
+  padding: 0.8rem 1rem;
 
   .icono-card {
     font-size: 1.5rem;
     margin-bottom: 0.2rem;
   }
 
-  .titulo-seccion {
-    font-size: 0.75rem;
+  p {
+    font-size: 0.85rem;
     margin-bottom: 0.2rem;
   }
 
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     margin: 0.2rem 0;
   }
 
   span {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 }

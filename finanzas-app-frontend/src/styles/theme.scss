@@ -2,15 +2,41 @@
 
 @import './variables';
 
+:root {
+  // 🎨 Variables para MODO CLARO (por defecto)
+  --bg-page: #f8fafc;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --card-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --table-border: #e2e8f0;
+  --table-row-hover: #f1f5f9;
+  --meta-card-bg: #f8fafc;
+}
+
 body {
-  background-color: $light-bg;
-  color: $text-primary;
-  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   margin: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.modo-oscuro {
-  background-color: $dark-bg;
-  color: $text-light;
+  // 🎨 Variables para MODO OSCURO
+  --bg-page: #0f172a;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  --card-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --table-border: #334155;
+  --table-row-hover: #334155;
+  --meta-card-bg: #1e293b;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
 }

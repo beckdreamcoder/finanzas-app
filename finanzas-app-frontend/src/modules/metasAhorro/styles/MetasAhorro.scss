@@ -6,46 +6,46 @@
   flex-direction: column;
 
   .encabezado-metas {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; // Para que se acomode en dispositivos pequeños
-  //margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 
-  .titulo-seccion {
-    font-size: 1.6rem;
-    font-weight: bold;
-    white-space: nowrap; // Evita que se corte o pase a otra línea
-    margin: 0;
-  }
+    .titulo-seccion {
+      font-size: 1.6rem;
+      font-weight: bold;
+      white-space: nowrap;
+      margin: 0;
+      color: var(--text-main);
+    }
 
-  .filtro-metas {
-    flex: 1;
-    min-width: 200px;
-    max-width: 300px;
-    margin-left: auto; 
-    margin-right: 1rem;
-    padding-top: 1rem; 
-  }
+    .filtro-metas {
+      flex: 1;
+      min-width: 200px;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: 1rem;
+      padding-top: 1rem;
+    }
 
-  .btn-agregar {
-    width: 25%;
-    padding: 0.5rem 1.2rem;
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: white;
-    background-color: $color-success;
-    border: none;
-    border-radius: $radius-sm;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.3s ease;
+    .btn-agregar {
+      width: 25%;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: white;
+      background-color: $color-success;
+      border: none;
+      border-radius: $radius-sm;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.3s ease;
 
-    &:hover {
-      background-color: darken($color-success, 5%);
+      &:hover {
+        background-color: darken($color-success, 5%);
+      }
     }
   }
-}
 
   .resumen-metas {
     display: flex;
@@ -53,56 +53,58 @@
     flex-wrap: wrap;
   }
 
- .leyenda-progreso {
-  margin: 20px 0;
-  background: #f9f9f9;
-  padding: 15px 20px;
-  border-radius: 8px;
-  border-left: 4px solid #4caf50;
+  .leyenda-progreso {
+    margin: 20px 0;
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--card-border, #e2e8f0);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #4caf50;
 
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  flex-wrap: wrap;
-
-  h4 {
-    font-size: 15px;
-    font-weight: bold;
-    color: $text-primary;
-    margin: 0;
-  }
-
-  .item-leyenda {
     display: flex;
     align-items: center;
-    font-size: 14px;
-    gap: 6px;
-    color: $text-primary;
+    gap: 25px;
+    flex-wrap: wrap;
+
+    h4 {
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .item-leyenda {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      gap: 6px;
+      color: var(--text-main);
+    }
+
+    .color-box {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .barra-roja {
+      background-color: #e74c3c;
+    }
+
+    .barra-amarilla {
+      background-color: #f1c40f;
+    }
+
+    .barra-verde {
+      background-color: #27ae60;
+    }
+
+    .completed {
+      background-color: #2ecc71;
+    }
   }
 
-  .color-box {
-    width: 14px;
-    height: 14px;
-    border-radius: 4px;
-    display: inline-block;
-  }
-
-  .barra-roja {
-    background-color: #e74c3c;
-  }
-
-  .barra-amarilla {
-    background-color: #f1c40f;
-  }
-
-  .barra-verde {
-    background-color: #27ae60;
-  }
-
-  .completed {
-    background-color: #2ecc71;
-  }
-}
   .lista-metas {
     display: flex;
     flex-direction: column;
@@ -110,15 +112,8 @@
 
   .sin-resultados {
     font-size: 1rem;
-    color: $text-secondary;
+    color: var(--text-muted);
     text-align: center;
     margin-top: $padding-md;
   }
 }
-
-body.modo-oscuro .metas-page .titulo-seccion {  
-  color: $text-light;
-}
-
-
-
