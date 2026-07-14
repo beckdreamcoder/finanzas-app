@@ -10,6 +10,8 @@ import com.utp.finanzasApp.sales.domain.model.Usuario;
 import com.utp.finanzasApp.sales.interfaces.dto.MovimientoDTO;
 import com.utp.finanzasApp.support.JwtUtil;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +24,8 @@ import java.util.stream.Stream;
 @RestController
 @RequestMapping("/api/reportes")
 public class ReporteFinancieroController {
+
+    private static final Logger log = LoggerFactory.getLogger(ReporteFinancieroController.class);
 
     private final ReporteFinancieroService reporteFinancieroService;
     private final SaldoService saldoService;
@@ -44,6 +48,8 @@ public class ReporteFinancieroController {
     ) throws IOException, DocumentException {
 
         Long usuarioId = jwtUtil.obtenerUsuarioIdDesdeToken(token);
+        log.info("[REPORTE] Solicitud de generación de Estado de Cuenta PDF para usuario ID: {} (filtro: {})", usuarioId, filtro);
+
 
         LocalDateTime hoy = LocalDateTime.now();
         LocalDateTime inicio = null;

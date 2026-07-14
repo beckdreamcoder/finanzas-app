@@ -7,6 +7,8 @@ import com.utp.finanzasApp.sales.interfaces.dto.ActualizarTransaccionDTO;
 import com.utp.finanzasApp.sales.interfaces.dto.ProgresoMetaDTO;
 import com.utp.finanzasApp.sales.interfaces.dto.RegistrarTransaccionDTO;
 import com.utp.finanzasApp.support.JwtUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,9 @@ import java.util.NoSuchElementException;
 @RestController
 @RequestMapping("/api/transacciones")
 public class TransaccionController {
+
+    // Logger para monitoreo del servicio TI — registra operaciones CRUD de transacciones
+    private static final Logger log = LoggerFactory.getLogger(TransaccionController.class);
 
     private final RegistroTransaccionService registroTransaccionService;
     private final ConsultaTransaccionesService consultaTransaccionesService;
@@ -42,7 +47,9 @@ public class TransaccionController {
             @RequestBody RegistrarTransaccionDTO dto
     ) {
         Long usuarioId = jwtUtil.obtenerUsuarioIdDesdeToken(token);
+        log.info("[TRANSACCION] Registrando {} de S/{} para usuario ID: {}", dto.getTipo(), dto.getMonto(), usuarioId);
         Transaccion transaccion = registroTransaccionService.registrar(usuarioId, dto);
+        log.info("[TRANSACCION] Registrada exitosamente — ID: {}, Tipo: {}, Monto: S/{}", transaccion.getId(), transaccion.getTipo(), transaccion.getMonto());
         return ResponseEntity.ok(transaccion);
     }
 
@@ -53,10 +60,11 @@ public class TransaccionController {
             @RequestHeader("Authorization") String token
     ) {
         Long usuarioId = jwtUtil.obtenerUsuarioIdDesdeToken(token);
+        log.info("[TRANSACCION] Consultando transacciones del usuario ID: {}", usuarioId);
         List<Transaccion> transacciones = consultaTransaccionesService.obtenerPorUsuario(usuarioId);
         // Ordenar por fecha descendente (más reciente a más antigua)
         transacciones.sort((t1, t2) -> t2.getFecha().compareTo(t1.getFecha()));
-
+        log.info("[TRANSACCION] Se encontraron {} transacciones para usuario ID: {}", transacciones.size(), usuarioId);
         return ResponseEntity.ok(transacciones);
     }
 
