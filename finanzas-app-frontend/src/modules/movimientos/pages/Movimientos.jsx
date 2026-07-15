@@ -32,9 +32,10 @@ const Movimientos = () => {
   const cargarMovimientos = useCallback(async () => {
     try {
       const data = await obtenerMisTransacciones(token);
-      setMovimientos(data);
+      setMovimientos(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error('Error cargando movimientos:', error);
+      setMovimientos([]);
     }
   }, [token]);
 
@@ -44,8 +45,10 @@ const Movimientos = () => {
         obtenerTotalIngresos(token),
         obtenerTotalGastos(token),
       ]);
-      setIngresos(totalIngresos);
-      setGastos(totalGastos);
+      const ingVal = typeof totalIngresos === 'string' && totalIngresos.includes('<!doctype') ? 0 : (typeof totalIngresos === 'number' ? totalIngresos : parseFloat(totalIngresos) || 0);
+      const gasVal = typeof totalGastos === 'string' && totalGastos.includes('<!doctype') ? 0 : (typeof totalGastos === 'number' ? totalGastos : parseFloat(totalGastos) || 0);
+      setIngresos(ingVal);
+      setGastos(gasVal);
     } catch (error) {
       console.error('Error al cargar ingresos/gastos:', error);
     }
@@ -74,8 +77,9 @@ const Movimientos = () => {
     setMostrarModal(true);
   };
 
-  const movimientosFiltrados = movimientos.filter((mov) => {
-    const coincideTexto = mov.descripcion.toLowerCase().includes(filtroTexto.toLowerCase());
+  const listaMovs = Array.isArray(movimientos) ? movimientos : [];
+  const movimientosFiltrados = listaMovs.filter((mov) => {
+    const coincideTexto = (mov.descripcion || '').toLowerCase().includes(filtroTexto.toLowerCase());
     const coincideTipo = filtroTipo === 'todos' || mov.tipo === filtroTipo;
     return coincideTexto && coincideTipo;
   });

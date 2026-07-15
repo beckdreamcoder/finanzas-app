@@ -1,7 +1,8 @@
 // src/modules/movimientos/services/movimientoService.js
 import axios from 'axios';
 
-const API_URL = '/api/transacciones';
+const BASE_URL = process.env.REACT_APP_API_URL || '/api';
+const API_URL = `${BASE_URL}/transacciones`;
 
 export const obtenerMisTransacciones = async (token) => {
   const res = await axios.get(`${API_URL}/mis-transacciones`, {
@@ -25,14 +26,14 @@ export const actualizarMovimiento = async (token, id, datos) => {
 };
 
 export const obtenerTotalIngresos = async (token) => {
-  const res = await axios.get('/api/saldo/ingresos', {
+  const res = await axios.get(`${BASE_URL}/saldo/ingresos`, {
     headers: { Authorization: token },
   });
   return res.data;
 };
 
 export const obtenerTotalGastos = async (token) => {
-  const res = await axios.get('/api/saldo/gastos', {
+  const res = await axios.get(`${BASE_URL}/saldo/gastos`, {
     headers: { Authorization: token },
   });
   return res.data;

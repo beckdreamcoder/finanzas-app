@@ -1,7 +1,8 @@
 // src/modules/metasAhorro/services/metasService.js
 import axios from 'axios';
 
-const API_URL = '/api/metas';
+const BASE_URL = process.env.REACT_APP_API_URL || '/api';
+const API_URL = `${BASE_URL}/metas`;
 
 export const obtenerMisMetas = async (token) => {
   const res = await axios.get(`${API_URL}/mis-metas`, {

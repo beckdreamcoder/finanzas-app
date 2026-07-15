@@ -35,17 +35,21 @@ const Bienvenido = () => {
 
     const obtenerDatos = async () => {
       try {
+        const BASE_URL = process.env.REACT_APP_API_URL || '/api';
         // Consultas paralelas para mejor rendimiento
         const [resSaldo, resIngresos, resGastos, resTrans, resMetas] = await Promise.all([
-          axios.get('/api/saldo', { headers }),
-          axios.get('/api/saldo/ingresos', { headers }),
-          axios.get('/api/saldo/gastos', { headers }),
-          axios.get('/api/transacciones/mis-transacciones', { headers }).catch(() => ({ data: [] })),
-          axios.get('/api/metas/mis-metas', { headers }).catch(() => ({ data: [] })),
+          axios.get(`${BASE_URL}/saldo`, { headers }),
+          axios.get(`${BASE_URL}/saldo/ingresos`, { headers }),
+          axios.get(`${BASE_URL}/saldo/gastos`, { headers }),
+          axios.get(`${BASE_URL}/transacciones/mis-transacciones`, { headers }).catch(() => ({ data: [] })),
+          axios.get(`${BASE_URL}/metas/mis-metas`, { headers }).catch(() => ({ data: [] })),
         ]);
-        setSaldo(resSaldo.data);
-        setIngresos(resIngresos.data);
-        setGastos(resGastos.data);
+        const saldoVal = typeof resSaldo.data === 'string' && resSaldo.data.includes('<!doctype') ? 0 : (typeof resSaldo.data === 'number' ? resSaldo.data : parseFloat(resSaldo.data) || 0);
+        const ingVal = typeof resIngresos.data === 'string' && resIngresos.data.includes('<!doctype') ? 0 : (typeof resIngresos.data === 'number' ? resIngresos.data : parseFloat(resIngresos.data) || 0);
+        const gasVal = typeof resGastos.data === 'string' && resGastos.data.includes('<!doctype') ? 0 : (typeof resGastos.data === 'number' ? resGastos.data : parseFloat(resGastos.data) || 0);
+        setSaldo(saldoVal);
+        setIngresos(ingVal);
+        setGastos(gasVal);
         // Últimas 5 transacciones ordenadas por fecha descendente
         const listaTransacciones = Array.isArray(resTrans.data) ? resTrans.data : [];
         const ordenadas = listaTransacciones

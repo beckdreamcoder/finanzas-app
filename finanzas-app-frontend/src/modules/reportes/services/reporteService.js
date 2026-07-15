@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = '/api/reportes';
+const BASE_URL = process.env.REACT_APP_API_URL || '/api';
+const API_URL = `${BASE_URL}/reportes`;
 
 export const descargarReporteEstadoCuenta = async (token, filtro, fechaInicio, fechaFin) => {
   const params = new URLSearchParams();
