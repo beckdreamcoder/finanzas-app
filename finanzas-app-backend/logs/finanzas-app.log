@@ -1,0 +1,2 @@
+2026-07-14 18:29:34.760 [main] INFO  c.u.f.FinanzasAppApplication - Starting FinanzasAppApplication using Java 26.0.1 with PID 28664 (D:\Descargas\Proyecto Integrador 2\finanzas-app\finanzas-app-backend\target\classes started by janit in D:\Descargas\Proyecto Integrador 2\finanzas-app\finanzas-app-backend)
+2026-07-14 18:29:34.766 [main] INFO  c.u.f.FinanzasAppApplication - No active profile set, falling back to 1 default profile: "default"
