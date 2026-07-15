@@ -1,0 +1,16 @@
+2026-07-15T15:11:39.937597853Z  :: Spring Boot ::                (v3.4.6)
+2026-07-15T15:11:41.447943861Z 15:11:41.439 INFO  c.u.f.FinanzasAppApplication - Starting FinanzasAppApplication v0.0.1-SNAPSHOT using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+2026-07-15T15:12:11.539941079Z 15:12:11.539 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 10000 (http)
+2026-07-15T15:13:23.942999955Z 15:13:23.942 INFO  c.u.f.s.i.c.UsuarioController - [LOGIN] Intento de inicio de sesión para el correo: juancho@gmail.com
+2026-07-15T15:13:28.835740327Z 15:13:28.835 INFO  c.u.f.s.i.c.UsuarioController - [LOGIN] Inicio de sesión exitoso para el usuario ID: 19
+2026-07-15T15:13:30.836661805Z 15:13:30.836 INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 19
+2026-07-15T15:14:05.440080341Z 15:14:05.439 INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Registrando INGRESO de S/1200.0 para usuario ID: 19
+2026-07-15T15:14:06.436448766Z 15:14:06.435 INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Registrada exitosamente — ID: 34, Tipo: INGRESO, Monto: S/1200.0
+2026-07-15T15:17:09.036735322Z 15:17:09.036 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingRequestHeaderException: Required request header 'Authorization' for method parameter type String is not present]
+2026-07-15T15:40:45.950294255Z 15:40:45.946 INFO  c.u.f.s.i.c.UsuarioController - [REGISTRO] Nuevo registro de usuario — Correo: mario@gmail.com
+2026-07-15T15:40:46.978366171Z 15:40:46.977 INFO  c.u.f.s.i.c.UsuarioController - [REGISTRO] Usuario creado exitosamente — ID: 30, Nombre: mario
+2026-07-15T15:43:17.254921311Z 15:43:17.254 INFO  c.u.f.s.i.c.ReporteFinancieroController - [REPORTE] Solicitud de generación de Estado de Cuenta PDF para usuario ID: 30 (filtro: hoy)
+2026-07-15T16:53:53.635585502Z 16:53:53.635 WARN  c.u.f.s.i.c.UsuarioController - [LOGIN] Intento de inicio de sesión fallido para el correo: juancho@gmail.com — Razón: Usuario no encontrado
+2026-07-15T16:57:32.945841764Z 16:57:32.945 INFO  c.u.f.s.i.c.UsuarioController - [LOGIN] Inicio de sesión exitoso para el usuario ID: 19
+2026-07-15T17:40:36.869227339Z 17:40:36.868 INFO  c.u.f.s.i.c.UsuarioController - [REGISTRO] Nuevo registro de usuario — Correo: pablo@gmail.com
+2026-07-15T17:40:59.641582953Z 17:40:59.640 INFO  c.u.f.s.i.c.UsuarioController - [LOGIN] Inicio de sesión exitoso para el usuario ID: 31
