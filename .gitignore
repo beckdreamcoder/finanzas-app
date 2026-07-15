@@ -1,0 +1,19 @@
+# Archivos de entorno y secretos
+.env
+*.env
+!.env.example
+
+# Archivos temporales de log y respaldos con datos sensibles en el root
+*.log
+*.sql
+!db/finanzas-db.sql
+!db/backups/defaultdb_backup_*.sql
+
+# Carpetas y archivos de IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
