@@ -34,7 +34,7 @@ const LoginForm = () => {
       <form className="form-card" onSubmit={handleSubmit}>
         <div className="icon">$</div>
         <h2>FINANCETRACKER</h2>
-        <p>COMPROMETIDOS CON TU BIENESTAR FINANCIERO</p>
+        <p>COMPROMETIDOS CON TU BIENESTAR FINANCIERO HOY</p>
 
         <input
           type="email"
