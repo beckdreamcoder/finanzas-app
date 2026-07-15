@@ -57,7 +57,7 @@ const Auth = () => {
         <div className="auth-card">
           <div className="logo">$</div>
           <h1 className="app-title">FRONT-END</h1>
-          <p className="app-subtitle">Comprometidos con tu bienestar financiero</p>
+          <p className="app-subtitle">Comprometidos con tu bienestar financiero hoy</p>
 
           <div className="success-message" ref={successRef}>
             ¡Bienvenido! Iniciando sesión...
