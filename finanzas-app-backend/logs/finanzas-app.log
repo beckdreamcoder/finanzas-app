@@ -1,22 +1,22 @@
-2026-07-14 18:29:34.760 [main] INFO  c.u.f.FinanzasAppApplication - Starting FinanzasAppApplication using Java 26.0.1 with PID 28664 (D:\Descargas\Proyecto Integrador 2\finanzas-app\finanzas-app-backend\target\classes started by janit in D:\Descargas\Proyecto Integrador 2\finanzas-app\finanzas-app-backend)
-2026-07-14 18:29:34.766 [main] INFO  c.u.f.FinanzasAppApplication - No active profile set, falling back to 1 default profile: "default"
-2026-07-14 18:29:35.393 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-07-14 18:29:35.536 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 136 ms. Found 4 JPA repository interfaces.
-2026-07-14 18:29:36.024 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2026-07-14 18:29:36.038 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-07-14 18:29:36.039 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
-2026-07-14 18:29:36.134 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-07-14 18:29:36.135 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1324 ms
-2026-07-14 18:29:36.272 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-07-14 18:29:36.323 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
-2026-07-14 18:29:36.352 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2026-07-14 18:29:36.596 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-07-14 18:29:36.621 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-07-14 18:29:36.810 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6182ffef
-2026-07-14 18:29:36.812 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-07-14 18:29:36.846 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
-2026-07-14 18:29:36.849 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-07-14 18:29:36.865 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-07-15 12:31:02.441 [main] INFO  c.u.f.FinanzasAppApplication - Starting FinanzasAppApplication using Java 26.0.1 with PID 13636 (D:\Descargas\Proyecto Integrador 2\finanzas-app\finanzas-app-backend\target\classes started by janit in D:\Descargas\Proyecto Integrador 2\finanzas-app\finanzas-app-backend)
+2026-07-15 12:31:02.449 [main] INFO  c.u.f.FinanzasAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-07-15 12:31:03.194 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-15 12:31:03.288 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 4 JPA repository interfaces.
+2026-07-15 12:31:03.859 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-07-15 12:31:03.879 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-07-15 12:31:03.880 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-07-15 12:31:04.032 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-07-15 12:31:04.058 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1554 ms
+2026-07-15 12:31:04.226 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-15 12:31:04.293 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2026-07-15 12:31:04.337 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-07-15 12:31:04.594 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-15 12:31:04.622 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-07-15 12:31:04.817 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@315b4202
+2026-07-15 12:31:04.818 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-07-15 12:31:04.853 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-15 12:31:04.856 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-15 12:31:04.873 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 5.5.5
@@ -24,47 +24,91 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-07-14 18:29:37.526 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-07-14 18:29:37.591 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-07-14 18:29:37.922 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-07-14 18:29:37.948 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+2026-07-15 12:31:05.585 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-15 12:31:05.653 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-15 12:31:06.018 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-15 12:31:06.048 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
 
-Using generated security password: a60fbdee-e3eb-441c-8c3a-6962a04a7dbd
+Using generated security password: ae5f2c93-128f-4791-abf3-e57409a09462
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2026-07-14 18:29:38.322 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
-2026-07-14 18:29:38.328 [main] INFO  c.u.f.FinanzasAppApplication - Started FinanzasAppApplication in 3.981 seconds (process running for 4.289)
-2026-07-14 18:34:04.423 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-07-14 18:34:04.423 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-07-14 18:34:04.425 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2026-07-14 18:34:04.526 [http-nio-8081-exec-2] INFO  c.u.f.s.i.c.UsuarioController - [LOGIN] Intento de inicio de sesión para el correo: test9@gmail.com
-2026-07-14 18:34:04.663 [http-nio-8081-exec-2] WARN  c.u.f.s.i.c.UsuarioController - [LOGIN] Intento de inicio de sesión fallido para el correo: test9@gmail.com — Razón: Usuario no encontrado
-2026-07-14 18:34:20.542 [http-nio-8081-exec-3] INFO  c.u.f.s.i.c.UsuarioController - [LOGIN] Intento de inicio de sesión para el correo: test5@gmail.com
-2026-07-14 18:34:20.679 [http-nio-8081-exec-3] INFO  c.u.f.s.i.c.UsuarioController - [LOGIN] Inicio de sesión exitoso para el usuario ID: 3
-2026-07-14 18:34:21.112 [http-nio-8081-exec-7] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
-2026-07-14 18:34:21.115 [http-nio-8081-exec-7] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 1 transacciones para usuario ID: 3
-2026-07-14 18:34:21.435 [http-nio-8081-exec-2] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
-2026-07-14 18:34:21.440 [http-nio-8081-exec-2] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 1 transacciones para usuario ID: 3
-2026-07-14 18:34:30.310 [http-nio-8081-exec-2] INFO  c.u.f.s.i.c.ReporteFinancieroController - [REPORTE] Solicitud de generación de Estado de Cuenta PDF para usuario ID: 3 (filtro: hoy)
-2026-07-14 18:34:38.081 [http-nio-8081-exec-10] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
-2026-07-14 18:34:38.160 [http-nio-8081-exec-10] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 1 transacciones para usuario ID: 3
-2026-07-14 18:34:38.526 [http-nio-8081-exec-6] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
-2026-07-14 18:34:38.550 [http-nio-8081-exec-6] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 1 transacciones para usuario ID: 3
-2026-07-14 18:34:41.107 [http-nio-8081-exec-7] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
-2026-07-14 18:34:41.112 [http-nio-8081-exec-7] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 1 transacciones para usuario ID: 3
-2026-07-14 18:34:41.424 [http-nio-8081-exec-10] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
-2026-07-14 18:34:41.427 [http-nio-8081-exec-10] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 1 transacciones para usuario ID: 3
-2026-07-14 18:34:52.587 [http-nio-8081-exec-4] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Registrando INGRESO de S/1000.0 para usuario ID: 3
-2026-07-14 18:34:52.635 [http-nio-8081-exec-4] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Registrada exitosamente — ID: 11, Tipo: INGRESO, Monto: S/1000.0
-2026-07-14 18:34:53.445 [http-nio-8081-exec-5] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
-2026-07-14 18:34:53.448 [http-nio-8081-exec-5] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 2 transacciones para usuario ID: 3
-2026-07-14 18:35:04.150 [http-nio-8081-exec-1] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Registrando GASTO de S/500.0 para usuario ID: 3
-2026-07-14 18:35:04.163 [http-nio-8081-exec-1] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Registrada exitosamente — ID: 12, Tipo: GASTO, Monto: S/500.0
-2026-07-14 18:35:05.346 [http-nio-8081-exec-9] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
-2026-07-14 18:35:05.349 [http-nio-8081-exec-9] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 3 transacciones para usuario ID: 3
-2026-07-14 18:35:12.334 [http-nio-8081-exec-8] INFO  c.u.f.s.i.c.ReporteFinancieroController - [REPORTE] Solicitud de generación de Estado de Cuenta PDF para usuario ID: 3 (filtro: 7dias)
-2026-07-14 18:35:27.390 [http-nio-8081-exec-6] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
-2026-07-14 18:35:27.392 [http-nio-8081-exec-6] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 3 transacciones para usuario ID: 3
-2026-07-14 18:35:27.719 [http-nio-8081-exec-10] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
-2026-07-14 18:35:27.724 [http-nio-8081-exec-10] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 3 transacciones para usuario ID: 3
+2026-07-15 12:31:06.465 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-07-15 12:31:06.472 [main] INFO  c.u.f.FinanzasAppApplication - Started FinanzasAppApplication in 4.511 seconds (process running for 4.836)
+2026-07-15 13:06:06.929 [main] INFO  c.u.f.FinanzasAppApplication - Starting FinanzasAppApplication using Java 26.0.1 with PID 35524 (D:\Descargas\Proyecto Integrador 2\finanzas-app\finanzas-app-backend\target\classes started by janit in D:\Descargas\Proyecto Integrador 2\finanzas-app\finanzas-app-backend)
+2026-07-15 13:06:06.931 [main] INFO  c.u.f.FinanzasAppApplication - No active profile set, falling back to 1 default profile: "default"
+2026-07-15 13:06:07.535 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-15 13:06:07.618 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75 ms. Found 4 JPA repository interfaces.
+2026-07-15 13:06:08.138 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-07-15 13:06:08.156 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-07-15 13:06:08.156 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-07-15 13:06:08.221 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-07-15 13:06:08.221 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1243 ms
+2026-07-15 13:06:08.374 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-15 13:06:08.431 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2026-07-15 13:06:08.468 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-07-15 13:06:08.730 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-15 13:06:08.765 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-07-15 13:06:08.916 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@67a8bcbb
+2026-07-15 13:06:08.918 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-07-15 13:06:08.957 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-07-15 13:06:08.961 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-15 13:06:08.977 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-15 13:06:09.697 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-15 13:06:09.765 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-15 13:06:10.166 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-15 13:06:10.205 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: e0501710-970a-44c5-8ca9-1e5d67de2d95
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-07-15 13:06:10.626 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-07-15 13:06:10.628 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-15 13:06:10.629 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-07-15 13:06:10.635 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-07-15 13:06:10.648 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-07-15 13:06:10.666 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2026-07-15 13:08:54.418 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-15 13:08:54.419 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-07-15 13:08:54.421 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-07-15 13:08:54.605 [http-nio-8081-exec-2] INFO  c.u.f.s.i.c.UsuarioController - [LOGIN] Intento de inicio de sesión para el correo: test5@gmail.com
+2026-07-15 13:08:54.889 [http-nio-8081-exec-2] INFO  c.u.f.s.i.c.UsuarioController - [LOGIN] Inicio de sesión exitoso para el usuario ID: 3
+2026-07-15 13:08:55.137 [http-nio-8081-exec-1] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
+2026-07-15 13:08:55.152 [http-nio-8081-exec-1] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 3 transacciones para usuario ID: 3
+2026-07-15 13:08:55.184 [http-nio-8081-exec-7] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
+2026-07-15 13:08:55.200 [http-nio-8081-exec-7] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 3 transacciones para usuario ID: 3
+2026-07-15 14:51:45.288 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=36m10s130ms839µs200ns).
+2026-07-15 16:14:55.988 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m8s72ms834µs100ns).
+2026-07-15 18:20:48.651 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m22s407ms966µs100ns).
+2026-07-15 18:21:32.467 [http-nio-8081-exec-7] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
+2026-07-15 18:21:32.523 [http-nio-8081-exec-7] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 3 transacciones para usuario ID: 3
+2026-07-15 18:21:32.546 [http-nio-8081-exec-3] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
+2026-07-15 18:21:32.551 [http-nio-8081-exec-3] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 3 transacciones para usuario ID: 3
+2026-07-15 18:21:35.446 [http-nio-8081-exec-4] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
+2026-07-15 18:21:35.451 [http-nio-8081-exec-4] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 3 transacciones para usuario ID: 3
+2026-07-15 18:21:35.462 [http-nio-8081-exec-5] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Consultando transacciones del usuario ID: 3
+2026-07-15 18:21:35.469 [http-nio-8081-exec-5] INFO  c.u.f.s.i.c.TransaccionController - [TRANSACCION] Se encontraron 3 transacciones para usuario ID: 3
+2026-07-15 20:12:43.555 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m54s63ms373µs600ns).

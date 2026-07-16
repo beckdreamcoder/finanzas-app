@@ -9,7 +9,7 @@
 param(
     [Parameter(Mandatory=$true)]
     [string]$BackupFilePath,
-    [string]$DbHost = "mysql-14aa6667-janitojahuarc-ec57.c.aivencloud.com",
+    [string]$DbHost = "mysql-32b27fc9-janitojahuarc-ec57.a.aivencloud.com",
     [int]$DbPort = 26994,
     [string]$DbUser = "avnadmin",
     [string]$DbPassword = $(if ($env:AIVEN_PASSWORD) { $env:AIVEN_PASSWORD } elseif ($env:DB_PASSWORD) { $env:DB_PASSWORD } else { "" }),
